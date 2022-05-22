@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Header from './header';
+import MapPage from './mapPage';
+import Profile from './profile'
+import Login from './login'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const mapItemName = 'Карта';
+const profileItemName = 'Профиль'
+
+class App extends Component {
+  state = { activePage: mapItemName };
+
+  changePage = (itemName) => {
+    this.setState({ activePage: itemName })
+  }
+
+  render () {
+
+    if (this.state.activePage === mapItemName) {
+      return (
+        <>
+          <Header changePageFunc={this.changePage}/>
+          <MapPage />
+        </>
+      )
+    } else if (this.state.activePage === profileItemName) {
+      return (
+        <>
+          <Header changePageFunc={this.changePage}/>
+          <Profile />
+        </>
+      )
+    } else {
+      return (
+        <>
+          <Login />
+        </>
+      )
+    }
+  }
+
 }
 
 export default App;
