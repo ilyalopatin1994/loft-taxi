@@ -1,7 +1,7 @@
 .wrapper {
     position: relative;
-    height: 100%;
-    background-image: url('../../public/map_1.png');
+    height: 98vh;
+    background: url('../../public/map_1.png') center center / cover no-repeat;;
 }
 
 .loginForm {
