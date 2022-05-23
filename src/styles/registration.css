@@ -4,10 +4,10 @@
     background: url('../../public/map_1.png') center center / cover no-repeat;;
 }
 
-.loginForm {
+.registrationForm {
     position: absolute;
     width: 580px;
-    height: 541px;
+    height: 631px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -15,7 +15,7 @@
 
 }
 
-.loginForm__title {
+.registrationForm__title {
     display: flex;
     justify-content: center;
     margin-top: 56px;
@@ -27,7 +27,7 @@
 
 }
 
-.loginFields {
+.registrationFields {
     position: relative;
     padding: 50px 112px 0px 112px;
 }
@@ -41,6 +41,10 @@ label {
 
 input {
     display: block;
+}
+
+label#fullname {
+    margin-top: 25px;
 }
 
 label#password {
@@ -102,7 +106,7 @@ a {
     cursor: pointer;;
 }
 
-.registrationLink {
+.loginLink {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -110,10 +114,10 @@ a {
     line-height: 19px;
 }
 
-.registrationLink--active {
+.loginLink--active {
     color: #FDBF5A;
 }
 
-.registrationLink--active:hover {
+.loginLink--active:hover {
     cursor: pointer;
 }

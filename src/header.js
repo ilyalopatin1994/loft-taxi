@@ -4,6 +4,7 @@ import './styles/header.css'
 
 const mapItemName = 'Карта';
 const profileItemName = 'Профиль'
+const loginItemName = 'Логин'
 const signOutItemName = 'Выйти'
 
 class Header extends Component {
@@ -32,7 +33,7 @@ class Header extends Component {
             <li className="navigation-menu__item"
                 onClick={() => this.props.changePageFunc(profileItemName)}>{profileItemName}</li>
             <li className="navigation-menu__item"
-                onClick={() => this.props.changePageFunc(signOutItemName)}>{signOutItemName}
+                onClick={() => this.props.changePageFunc(loginItemName)}>{signOutItemName}
             </li>
           </ul>
         </div>

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import './styles/login.css'
+import './styles/registration.css'
 
 const mapItemName = 'Карта';
-const registrationPage = 'Регистрация'
+const loginItemName = 'Логин'
 
-class Login extends Component {
+class Registration extends Component {
   constructor (props) {
     super(props);
     this.state = { email: '', password: '' }
@@ -22,17 +22,22 @@ class Login extends Component {
   render () {
     return (
       <div className="wrapper">
-        <div className="loginForm">
-          <div className="loginForm__title">Войти</div>
-          <form className="loginFields" onSubmit={this.submitHandler}>
+        <div className="registrationForm">
+          <div className="registrationForm__title">Регистрация</div>
+          <form className="registrationFields" onSubmit={this.submitHandler}>
             <label id="email">
-              Email
-              <input name="email" type="text" />
+              Email*
+              <input name="email" type="text" required />
+            </label>
+
+            <label id="fullname">
+              Как Вас зовут?*
+              <input name="fullname" type="text" required />
             </label>
 
             <label id="password">
-              Пароль
-              <input name="password" type="password" />
+              Придумайте пароль*
+              <input name="registration" type="password" required />
             </label>
             <div className="rememberPassword">
               <a href="#">Забыли пароль?</a>
@@ -43,9 +48,9 @@ class Login extends Component {
           </form>
 
           <div className="centerWrapper">
-            <div className="registrationLink">Новый пользователь?
-              <span className="registrationLink registrationLink--active"
-                    onClick={() => this.props.submitFunc(registrationPage)}> Регистрация</span>
+            <div className="loginLink">Новый пользователь?
+              <span className="loginLink loginLink--active"
+                    onClick={() => this.props.submitFunc(loginItemName)}> Войти</span>
             </div>
           </div>
         </div>
@@ -54,4 +59,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default Registration
