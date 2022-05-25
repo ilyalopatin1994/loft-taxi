@@ -12,7 +12,7 @@ class Login extends Component {
 
   submitHandler = (event) => {
     event.preventDefault();
-    // email, password записываются на будущее, для момента когда будем передавать их на сервер
+    // email, password записываются на будущее, для момента когда будем передавать их на сервер.
     const email = event.target[0].value;
     const password = event.target[1].value
     this.setState({ email, password });
