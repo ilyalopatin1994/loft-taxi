@@ -21,7 +21,7 @@ class Registration extends Component {
 
   render () {
     return (
-      <div className="wrapper">
+      <div className="registration-wrapper">
         <div className="registrationForm">
           <div className="registrationForm__title">Регистрация</div>
           <form className="registrationFields" onSubmit={this.submitHandler}>

@@ -1,6 +1,6 @@
-.wrapper {
+.login-page-wrapper {
     position: relative;
-    height: 98vh;
+    height: 81vh;
     background: url('../img/map_1.png') center center / cover no-repeat;;
 }
 
