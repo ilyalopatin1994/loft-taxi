@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './styles/registration.css'
+import '../styles/registration.css'
 
 const mapItemName = 'Карта';
 const loginItemName = 'Логин'

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Logo from "./logo"
-import './styles/header.css'
+import '../styles/header.css'
+import {ReactComponent as Logo} from '../img/logo.svg'
 
 const mapItemName = 'Карта';
 const profileItemName = 'Профиль'
@@ -24,7 +24,7 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="header__logo">
-          <Logo />
+          <Logo/>
         </div>
         <div className="header__navigation navigation-menu">
           <ul>
