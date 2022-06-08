@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import MapPage from './components/MapPage';
-import Profile from './components/Profile'
-import Login from './components/Login'
-import Registration from "./components/Registration"
-
-const mapItemName = 'Карта';
-const profileItemName = 'Профиль'
-const registrationPage = 'Регистрация'
-const loginItemName = 'Логин'
-
+import Profile from './components/Profile';
+import Login from './components/Login';
+import Registration from "./components/Registration";
+import { AuthProvider } from "./components/Authorization";
+import { mapItemName, profileItemName, registrationPage, loginItemName } from "./config";
+import './styles/App.css';
 
 class App extends Component {
   state = { activePage: mapItemName };
@@ -19,8 +16,8 @@ class App extends Component {
   }
 
   pages = {
-    [mapItemName]: <MapPage submitFunc={this.changePage} />,
-    [profileItemName]: <Profile submitFunc={this.changePage} />,
+    [mapItemName]: <MapPage />,
+    [profileItemName]: <Profile />,
     [registrationPage]: <Registration submitFunc={this.changePage} />,
     [loginItemName]: <Login submitFunc={this.changePage} />
   }
@@ -28,8 +25,10 @@ class App extends Component {
   render () {
     return (
       <>
+        <AuthProvider>
         <Header changePageFunc={this.changePage} />
-        {this.pages[this.state.activePage]}
+        <div className="mapWrapper">{this.pages[this.state.activePage]}</div>
+        </AuthProvider>
       </>
     )
   }
