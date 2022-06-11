@@ -27,7 +27,7 @@ class Login extends Component {
           <div className="login-page-wrapper">
             <div className="loginForm">
               <div className="loginForm__title">Войти</div>
-              <form className="loginFields" onSubmit={(e) => this.submitHandler(e, login)}>
+              <form className="loginFields" data-testid="loginForm" onSubmit={(e) => this.submitHandler(e, login)}>
                 <label id="email">
                   Email
                   <input name="email" type="text" />
@@ -41,7 +41,7 @@ class Login extends Component {
                   <a href="#">Забыли пароль?</a>
                 </div>
                 <div className="centerWrapper">
-                  <input type="submit" className="submitButton" value="Войти" />
+                  <input data-testid="loginButton" type="submit" className="submitButton" value="Войти" />
                 </div>
               </form>
 

@@ -1,13 +1,16 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types"
 
 const AuthContext = React.createContext();
 
 class AuthProvider extends Component {
-  state = { isLoggedIn: false }
+  constructor (props) {
+    super(props)
+    this.state = {isLoggedIn: this.props.isLoggedIn}
+  }
 
   login = (email, password) => {
     this.setState({ isLoggedIn: true })
-    console.log('I am here')
   }
 
   logout = () => {
@@ -26,6 +29,14 @@ class AuthProvider extends Component {
   }
 }
 
+AuthProvider.propTypes = {
+  isLoggedIn: PropTypes.bool
+}
+
+
+AuthProvider.defaultProps = {
+  isLoggedIn: false
+}
 function AuthHoc (WrappedComponent) {
   return class extends Component {
     static displayName = 'AuthHoc';

@@ -29,8 +29,8 @@ class MapPage extends Component {
       width: '100%'
     };
     return (
-      <div>{this.context.isLoggedIn ? <div style={style} ref={el => this.mapContainer = el} /> :
-        <div>Вы не вошли в систему! Страница доступна только авторизированным пользователям.</div>}
+      <div>{this.context.isLoggedIn ? <div data-testid="map" style={style} ref={el => this.mapContainer = el} /> :
+        <div data-testid="notAuthorizedMessage">Вы не вошли в систему! Страница доступна только авторизированным пользователям.</div>}
       </div>
     )
       ;
