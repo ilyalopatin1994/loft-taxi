@@ -1,7 +1,7 @@
-.wrapper {
+.login-page-wrapper {
     position: relative;
-    height: 98vh;
-    background: url('../../public/map_1.png') center center / cover no-repeat;;
+    height: 81vh;
+    background: url('../img/map_1.png') center center / cover no-repeat;;
 }
 
 .loginForm {

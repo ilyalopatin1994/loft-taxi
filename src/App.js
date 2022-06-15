@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import Header from './header';
-import MapPage from './mapPage';
-import Profile from './profile'
-import Login from './login'
-import Registration from "./registration"
-
-const mapItemName = 'Карта';
-const profileItemName = 'Профиль'
-const registrationPage = 'Регистрация'
-const loginItemName = 'Логин'
+import Header from './components/Header';
+import MapPage from './components/MapPage';
+import Profile from './components/Profile';
+import Login from './components/Login';
+import Registration from "./components/Registration";
+import { AuthProvider } from "./components/Authorization";
+import { mapItemName, profileItemName, registrationPage, loginItemName } from "./config";
+import './styles/App.css';
 
 class App extends Component {
   state = { activePage: mapItemName };
@@ -17,35 +15,22 @@ class App extends Component {
     this.setState({ activePage: itemName })
   }
 
-  render () {
+  pages = {
+    [mapItemName]: <MapPage />,
+    [profileItemName]: <Profile />,
+    [registrationPage]: <Registration submitFunc={this.changePage} />,
+    [loginItemName]: <Login submitFunc={this.changePage} />
+  }
 
-    if (this.state.activePage === mapItemName) {
-      return (
-        <>
-          <Header changePageFunc={this.changePage}/>
-          <MapPage />
-        </>
-      )
-    } else if (this.state.activePage === profileItemName) {
-      return (
-        <>
-          <Header changePageFunc={this.changePage}/>
-          <Profile />
-        </>
-      )
-    } else if (this.state.activePage === loginItemName) {
-      return (
-        <>
-          <Login submitFunc={this.changePage}/>
-        </>
-      )
-    } else {
-      return (
-        <>
-          <Registration submitFunc={this.changePage}/>
-        </>
-      )
-    }
+  render () {
+    return (
+      <>
+        <AuthProvider>
+        <Header changePageFunc={this.changePage} />
+        <div className="mapWrapper">{this.pages[this.state.activePage]}</div>
+        </AuthProvider>
+      </>
+    )
   }
 
 }
